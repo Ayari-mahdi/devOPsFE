@@ -35,7 +35,7 @@ import { environment } from 'src/environments/environment';
     RouterModule,
     NgbModule
   ],
-  providers: [ { provide: 'API_URL', useValue: environment.apiUrl }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
