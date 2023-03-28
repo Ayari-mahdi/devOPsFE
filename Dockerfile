@@ -9,7 +9,7 @@ RUN npm run build --prod
 #EXPOSE 4200
 #CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
 FROM nginx:1.21.1-alpine
-COPY /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY /app/dist/crudtuto-Front /home/dockerfiles
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 4200
 CMD ["nginx", "-g", "daemon off;"]
