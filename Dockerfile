@@ -2,7 +2,7 @@ FROM node:lts-alpine
 WORKDIR /app
 COPY ./package*.json ./
 RUN npm install -g @angular/cli
-RUN npm install --no-optional
+RUN npm install --force
 COPY . .
 RUN npm run build
 EXPOSE 4200
