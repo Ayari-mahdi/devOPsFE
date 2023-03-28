@@ -1,10 +1,10 @@
 FROM node:16-alpine
 RUN mkdir /app
 WORKDIR /app
+COPY . .
 COPY ./package*.json ./
 #RUN npm install -g @angular/cli
 RUN npm install --force
-COPY . .
 RUN npm run build --prod
 #EXPOSE 4200
 #CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
