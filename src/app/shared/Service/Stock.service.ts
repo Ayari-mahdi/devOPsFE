@@ -1,16 +1,17 @@
 import { Inject, Injectable } from '@angular/core';
 
 import { HttpClient} from '@angular/common/http';
+import { apiUrl } from 'src/environments/url';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class StockService {
-  readonly API_URL = 'http://'+this.apiUrl+'t:8089/SpringMVC/stock';
+  readonly API_URL = `http://${apiUrl}:8089/SpringMVC/stock`;
 
   constructor(private httpClient: HttpClient,
-    @Inject('API_URL') private apiUrl: string
+ 
     ) { }
 
   getAllStocks() {

@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { apiUrl } from 'src/environments/url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperateurService {
-  readonly API_URL = 'http://'+this.apiUrl+':8089/SpringMVC/operateur';
+  readonly API_URL = `http://${apiUrl}:8089/SpringMVC/operateur`;
 
   constructor(private httpClient: HttpClient,
-    @Inject('API_URL') private apiUrl: string
     ) { }
 
   getAllOperateurs() {
