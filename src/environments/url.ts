@@ -1,2 +1,2 @@
 export const 
-apiUrl :string = '192.168.1.21';
+apiUrl :string = 'tp-achat-db';
