@@ -1,11 +1,13 @@
 FROM node:16-alpine
 RUN mkdir /app
+RUN echo $(ls)
 WORKDIR /app
 COPY . .
 COPY ./package*.json ./
 #RUN npm install -g @angular/cli
 RUN npm install --force
 RUN npm run build --prod
+RUN echo $(ls)
 #EXPOSE 4200
 #CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
 FROM nginx:1.21.1-alpine
