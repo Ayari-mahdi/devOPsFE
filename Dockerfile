@@ -1,4 +1,4 @@
-FROM node:16-alpine AS node
+FROM node:16-alpine AS builder
 RUN mkdir /app
 RUN echo $(ls)
 WORKDIR /app
@@ -12,7 +12,7 @@ RUN echo $(ls)
 #CMD ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
 FROM nginx:1.21.1-alpine
 RUN echo $(ls)
-COPY --from=node /app/dist/crudtuto-Front /usr/share/nginx/html
+COPY --from=builder /app/dist/crudtuto-Front /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 4200
 CMD ["nginx", "-g", "daemon off;"]
