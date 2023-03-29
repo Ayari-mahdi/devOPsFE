@@ -4,7 +4,7 @@ RUN echo $(ls)
 WORKDIR /app
 COPY . .
 COPY ./package*.json ./
-#RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli
 RUN npm install --force
 RUN npm run build --prod
 RUN echo $(ls)
