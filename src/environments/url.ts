@@ -1,2 +1,2 @@
 export const 
-apiUrl :string = 'tp-achat-app';
+apiUrl :string = 'back';
